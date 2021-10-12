@@ -1,0 +1,127 @@
+/*Обнуление*/
+* {
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+*,
+*:before,
+*:after {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+:focus,
+:active {
+	outline: none;
+}
+a:focus,
+a:active {
+	outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+	display: block;
+}
+
+html,
+body {
+	height: 100%;
+	width: 100%;
+	font-size: 100%;
+	line-height: 1;
+	font-size: 14px;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+input,
+button,
+textarea {
+	font-family: inherit;
+}
+
+input::-ms-clear {
+	display: none;
+}
+button {
+	cursor: pointer;
+}
+button::-moz-focus-inner {
+	padding: 0;
+	border: 0;
+}
+a,
+a:visited {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+}
+ul li {
+	list-style: none;
+}
+img {
+	vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size: inherit;
+	font-weight: 400;
+}
+/*--Подключение шрифтов--*/
+@font-face {
+	font-family: "Futura";
+	src: url("../fonts/FuturaPTMedium.eot");
+	src: local("☺"), url("../fonts/FuturaPTMedium.woff") format("woff"),
+		url("../fonts/FuturaPTMedium.ttf") format("truetype"), url("../fonts/FuturaPTMedium.svg") format("svg");
+	font-weight: 600;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Futura";
+	src: url("../fonts/FuturaPTBold.eot");
+	src: local("☺"), url("../fonts/FuturaPTBold.woff") format("woff"),
+		url("../fonts/FuturaPTBold.ttf") format("truetype"), url("../fonts/FuturaPTBold.svg") format("svg");
+	font-weight: 700;
+	font-style: normal;
+}
+
+/*--------------------*/
+
+.wrapper {
+	min-height: 100%;
+}
+.header {
+	// .header__container
+	&__container {
+	}
+	// .header__logo
+	&__logo {
+	}
+	// .header__menu
+	&__menu {
+	}
+}
+._container {
+}
+
+.menu {
+	// .menu__list
+	&__list {
+	}
+	// .menu__item
+	&__item {
+	}
+	// .menu__link
+	&__link {
+	}
+}

@@ -1,83 +1,4 @@
-/*Обнуление*/
-* {
-	padding: 0;
-	margin: 0;
-	border: 0;
-}
-*,
-*:before,
-*:after {
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
-}
-:focus,
-:active {
-	outline: none;
-}
-a:focus,
-a:active {
-	outline: none;
-}
-
-nav,
-footer,
-header,
-aside {
-	display: block;
-}
-
-html,
-body {
-	height: 100%;
-	width: 100%;
-	font-size: 100%;
-	line-height: 1;
-	font-size: 14px;
-	-ms-text-size-adjust: 100%;
-	-moz-text-size-adjust: 100%;
-	-webkit-text-size-adjust: 100%;
-}
-input,
-button,
-textarea {
-	font-family: inherit;
-}
-
-input::-ms-clear {
-	display: none;
-}
-button {
-	cursor: pointer;
-}
-button::-moz-focus-inner {
-	padding: 0;
-	border: 0;
-}
-a,
-a:visited {
-	text-decoration: none;
-}
-a:hover {
-	text-decoration: none;
-}
-ul li {
-	list-style: none;
-}
-img {
-	vertical-align: top;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	font-size: inherit;
-	font-weight: 400;
-}
-/*--Подключение шрифтов--*/
+/*-----Подключение шрифтов-----*/
 @font-face {
 	font-family: "Futura";
 	src: url("../fonts/FuturaPTMedium.eot");
@@ -97,31 +18,116 @@ h6 {
 
 /*--------------------*/
 
+//<Шрифт по умолчанию>==========================================================================================
+$fontFamily: "Futura";
+$fontSize: 16;
+//</Шрифт по умолчанию>==========================================================================================
+
+//</ШРИФТЫ>=======================================================================================================
+
+//<ПЕРЕМЕННЫЕ>==========================================================================================================
+$minWidth: 320px;
+$maxWidth: 1440;
+$maxWidthContainer: 1160;
+$md1: $maxWidthContainer + 12;
+$md2: 991.98;
+$md3: 767.98;
+$md4: 479.98;
+
+$mainColor: #4c3d74;
+
+//</ПЕРЕМЕННЫЕ>===========================================================================================================
+
+//<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+@import "_null.scss";
+body {
+	text-transform: uppercase;
+	background: $mainColor;
+}
+._container {
+	max-width: $maxWidthContainer + px;
+	margin: 0px auto;
+	padding: 0px 15px;
+	box-sizing: content-box;
+	@media (max-width: $md3+px) {
+		padding: 0px 57px;
+	}
+}
+//</ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+
 .wrapper {
 	min-height: 100%;
+	display: flex;
+	flex-direction: column;
 }
 .header {
+	position: absolute;
+	width: 100%;
+	color: #fff;
+	min-height: 50px;
+	font-weight: 700;
+	padding: 105px 0px 105px 0px;
+	font-size: 14px;
+	line-height: 135%;
 	// .header__container
 	&__container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
 	}
 	// .header__logo
 	&__logo {
+		color: inherit;
+		width: 140px;
+		padding: 0px 20px 0px 0px;
 	}
 	// .header__menu
 	&__menu {
 	}
 }
-._container {
-}
 
 .menu {
+	// .menu__icon
+	&__icon {
+		position: absolute;
+		width: 40px;
+		height: 20px;
+		right: 0;
+		top: 0;
+		span,
+		&::before,
+		&::after {
+			position: absolute;
+			left: 0;
+			width: 100%;
+			height: 3px;
+			background-color: #fff;
+		}
+		span {
+			top: 50%;
+			transform: translateY(-1.5px);
+		}
+		&::before {
+			content: "";
+			top: 0;
+		}
+		&::after {
+			content: "";
+			bottom: 0;
+		}
+	}
 	// .menu__list
 	&__list {
+		display: flex;
 	}
 	// .menu__item
 	&__item {
+		&:not(:last-child) {
+			margin: 0px 27px 0px 0px;
+		}
 	}
 	// .menu__link
 	&__link {
+		color: inherit;
 	}
 }

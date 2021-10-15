@@ -151,7 +151,7 @@ body {
 		}
 	}
 	//.menu__body
-	&_body {
+	&__body {
 		@media (max-width: $md3+px) {
 			position: fixed;
 			width: 100%;
@@ -159,9 +159,8 @@ body {
 			top: 0;
 			left: 0;
 			padding: 150px 57px 20px 57px;
-			flex-direction: column;
 
-			// transform: translate(100%, 0);
+			transform: translate(100%, 0);
 			transition: all 0.3s ease 0s;
 
 			&::before {
@@ -186,6 +185,9 @@ body {
 		margin: -10px 0;
 		text-align: right;
 		overflow: auto;
+		@media (max-width: $md3+px) {
+			flex-direction: column;
+		}
 	}
 	// .menu__item
 	&__item {
@@ -195,7 +197,7 @@ body {
 		}
 		@media (min-width: $md3+px) {
 			&:not(:last-child) {
-				margin: 0px 27px 0px 0px;
+				margin: 10px 27px 10px 0px;
 			}
 		}
 	}
@@ -204,6 +206,7 @@ body {
 		color: inherit;
 		@media (max-width: $md3+px) {
 			color: $mainColor;
+			line-height: 130%;
 		}
 	}
 }

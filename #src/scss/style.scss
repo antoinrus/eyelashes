@@ -38,11 +38,18 @@ $mainColor: #4c3d74;
 
 //</ПЕРЕМЕННЫЕ>===========================================================================================================
 
+//=====МИКСИНЫ===================================================================================================================================================
+@mixin adaptiv-font($pcSize, $mobSize) {
+	$addSize: $pcSize - $mobSize;
+	$maxWidth: $maxWidth - 320;
+	font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+//========================================================================================================================================================
+
 //<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
 @import "_null.scss";
 body {
 	text-transform: uppercase;
-	background: $mainColor;
 	&._lock {
 		overflow: hidden;
 	}
@@ -56,10 +63,29 @@ body {
 		padding: 0px 57px;
 	}
 }
+.btn {
+	display: inline-flex;
+	min-width: 245px;
+	min-height: 60px;
+	border-radius: 30px;
+	color: #fff;
+	justify-content: center;
+	align-items: center;
+	padding: 5px 40px;
+
+	// .btn_fill
+	&_fill {
+		background: #A387C4;
+	}
+	// .btn_border
+	&_border {
+		border: 3px solid #A387C4;
+	}
+}
 //</ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
 
 .wrapper {
-	min-height: 100%;
+	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
 }
@@ -86,9 +112,15 @@ body {
 	}
 	// .header__logo
 	&__logo {
-		color: inherit;
+		font-weight: 700;
 		width: 140px;
-		padding: 0px 20px 0px 0px;
+		margin: 0px 40px 0px 0px;
+		a {
+			color: inherit;
+			@media (max-width: 414px) {
+				font-size: 12px;
+			}
+		}
 	}
 	// .header__menu
 	&__menu {
@@ -119,8 +151,7 @@ body {
 		}
 		span {
 			top: 50%;
-			transform: translateY(-1.5px);
-			transform: scale(1);
+			transform: translateY(-1.5px) scale(1);
 		}
 		&::before {
 			content: "";
@@ -157,31 +188,21 @@ body {
 			width: 100%;
 			height: 100%;
 			top: 0;
-			left: 0;
+			right: -100%;
 			padding: 150px 57px 20px 57px;
-
-			transform: translate(100%, 0);
+			background-color: #fff;
 			transition: all 0.3s ease 0s;
+			overflow: auto;
 
-			&::before {
-				content: "";
-				position: absolute;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
-				background-color: #fff;
-				z-index: -1;
-			}
 			&._active {
-				transform: translate(0, 0);
+				right: 0;
 			}
 		}
 	}
 	// .menu__list
 	&__list {
 		display: flex;
-		// flex-wrap: wrap;
+		flex-wrap: wrap;
 		margin: -10px 0;
 		text-align: right;
 		overflow: auto;
@@ -208,5 +229,72 @@ body {
 			color: $mainColor;
 			line-height: 130%;
 		}
+	}
+}
+//========================================================================================================================================================
+
+.page {
+	// .page__main-block
+	&__main-block {
+	}
+}
+//========================================================================================================================================================
+
+.main-block {
+	min-height: 100vh;
+	background: $mainColor;
+	// .main-block__container
+	&__container {
+		display: flex;
+
+		align-items: center;
+	}
+	// .main-block__body
+	&__body {
+		color: #FFFFFF;
+		font-weight: 700;
+	}
+	// .main-block__content
+	&__content {
+		margin: 0px 0px 44px 0px;
+	}
+	// .main-block__subtitle
+	&__subtitle {
+		font-size: 20px;
+		line-height: 135%;
+		&:not(:last-child) {
+			margin: 0px 0px 19px 0px;
+		}
+	}
+	// .main-block__title
+	&__title {
+		font-weight: 700;
+		font-size: 50px;
+		line-height: 132%;
+		&:not(:last-child) {
+			margin: 0px 0px 29px 0px;
+		}
+	}
+	// .main-block__buttons
+	&__buttons {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	// .main-block__button
+	&__button {
+		line-height: 131%;
+
+		&:not(:last-child) {
+			margin: 0px 24px 0px 0px;
+		}
+		// .main-block__button_fill
+		&_fill {
+		}
+		// .main-block__button_border
+		&_border {
+		}
+	}
+	// .main-block__image
+	&__image {
 	}
 }

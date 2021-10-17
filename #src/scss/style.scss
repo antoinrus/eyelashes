@@ -75,16 +75,17 @@ body {
 
 	// .btn_fill
 	&_fill {
-		background: #A387C4;
+		background: #a387c4;
 	}
 	// .btn_border
 	&_border {
-		border: 3px solid #A387C4;
+		border: 3px solid #a387c4;
 	}
 }
 //</ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
 
 .wrapper {
+	overflow: hidden;
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
@@ -241,18 +242,27 @@ body {
 //========================================================================================================================================================
 
 .main-block {
+	display: flex;
+	align-items: center;
 	min-height: 100vh;
 	background: $mainColor;
+	padding-top: 224px;
+	padding-bottom: 107px;
 	// .main-block__container
 	&__container {
 		display: flex;
-
 		align-items: center;
+
+		@media (max-width: $md2+px) {
+			flex-wrap: wrap;
+		}
 	}
 	// .main-block__body
 	&__body {
-		color: #FFFFFF;
+		flex: 1 1 auto;
+		color: #ffffff;
 		font-weight: 700;
+		margin: 0px 20px 0px 0px;
 	}
 	// .main-block__content
 	&__content {
@@ -260,7 +270,8 @@ body {
 	}
 	// .main-block__subtitle
 	&__subtitle {
-		font-size: 20px;
+		// font-size: 20px;
+		@include adaptiv-font(20, 16);
 		line-height: 135%;
 		&:not(:last-child) {
 			margin: 0px 0px 19px 0px;
@@ -269,7 +280,8 @@ body {
 	// .main-block__title
 	&__title {
 		font-weight: 700;
-		font-size: 50px;
+		// font-size: 50px;
+		@include adaptiv-font(50, 30);
 		line-height: 132%;
 		&:not(:last-child) {
 			margin: 0px 0px 29px 0px;
@@ -279,13 +291,15 @@ body {
 	&__buttons {
 		display: flex;
 		flex-wrap: wrap;
+		margin: -10px 0;
 	}
 	// .main-block__button
 	&__button {
 		line-height: 131%;
+		margin: 10px 0;
 
 		&:not(:last-child) {
-			margin: 0px 24px 0px 0px;
+			margin: 10px 24px 10px 0px;
 		}
 		// .main-block__button_fill
 		&_fill {
@@ -296,5 +310,15 @@ body {
 	}
 	// .main-block__image
 	&__image {
+		flex: 0 0 472px;
+		margin: 0px -68px 0px 0px;
+		@media (max-width: $md3+px) {
+			flex: 1 1 100%;
+			margin: 0;
+		}
+
+		img {
+			max-width: 100%;
+		}
 	}
 }

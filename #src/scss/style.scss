@@ -32,7 +32,7 @@ $maxWidthContainer: 1160;
 $md1: $maxWidthContainer + 12;
 $md2: 991.98;
 $md3: 767.98;
-$md4: 479.98;
+$md4: 413.98;
 
 $mainColor: #4c3d74;
 
@@ -70,14 +70,26 @@ body {
 	justify-content: center;
 	align-items: center;
 	padding: 5px 40px;
-
-	// .btn_fill
-	&_fill {
-		background: #a387c4;
+	background: #a387c4;
+	@media (max-width: $md4+px) {
+		padding: 5px 20px;
+		min-width: 200px;
 	}
+
 	// .btn_border
 	&_border {
+		background: transparent;
 		border: 3px solid #a387c4;
+	}
+}
+.title {
+	font-weight: 700;
+	font-size: 50px;
+	line-height: 132%;
+	color: #504178;
+	text-align: center;
+	&_w {
+		color: #fff;
 	}
 }
 //</ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
@@ -236,6 +248,9 @@ body {
 	// .page__main-block
 	&__main-block {
 	}
+	// .page__forwho
+	&__forwho {
+	}
 }
 //========================================================================================================================================================
 
@@ -289,11 +304,13 @@ body {
 		// font-size: 50px;
 		@include adaptiv-font(50, 30);
 		line-height: 132%;
-		@media (max-width: $md2+px) {
-			margin: 0px -29px;
-		}
 		&:not(:last-child) {
 			margin: 0px 0px 3.6vh 0px;
+		}
+		@media (max-width: $md2+px) {
+			&:not(:last-child) {
+				margin: 0px -29px 3.6vh -29px;
+			}
 		}
 	}
 	// .main-block__buttons
@@ -324,5 +341,52 @@ body {
 		img {
 			max-width: 100%;
 		}
+	}
+}
+//========================================================================================================================================================
+
+.forwho {
+	// .forwho__container
+	&__container {
+		padding: 167px 0 182px 0;
+	}
+	// .forwho__title
+	&__title {
+		margin: 0px 0px 46px 0px;
+	}
+	// .forwho__row-top
+	&__row-top {
+		display: flex;
+		margin: 0px 0px 43px 0px;
+	}
+	// .forwho__column
+	&__column {
+		flex: 0 1 33.333%;
+		padding: 0px 0px 0px 21px;
+	}
+	// .forwho__item
+	&__item {
+		background: #f2eef7;
+		border: 3px solid $mainColor;
+		border-radius: 30px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 30px 30px 30px 57px;
+	}
+	// .forwho__text
+	&__text {
+		font-weight: 500;
+		font-size: 16px;
+		line-height: 150%;
+	}
+	// .forwho__row-bottom
+	&__row-bottom {
+	}
+	// .forwho__subtitle
+	&__subtitle {
+	}
+	// .forwho__btn
+	&__btn {
 	}
 }

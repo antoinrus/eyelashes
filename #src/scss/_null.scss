@@ -34,6 +34,7 @@ body {
 	font-size: 100%;
 	line-height: 1;
 	font-size: $fontSize + px;
+	font-weight: 500;
 	font-family: $fontFamily, Helvetica, Arial, sans-serif;
 	-ms-text-size-adjust: 100%;
 	-moz-text-size-adjust: 100%;
@@ -76,6 +77,5 @@ h4,
 h5,
 h6 {
 	font-size: inherit;
-	font-weight: 400;
 }
 /*--------------------*/

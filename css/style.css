@@ -55,6 +55,7 @@ body {
   font-size: 100%;
   line-height: 1;
   font-size: 16px;
+  font-weight: 500;
   font-family: "Futura", Helvetica, Arial, sans-serif;
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
@@ -104,7 +105,6 @@ h4,
 h5,
 h6 {
   font-size: inherit;
-  font-weight: 400;
 }
 
 /*--------------------*/
@@ -494,14 +494,28 @@ body._lock {
   margin: 0px 0px 43px 0px;
 }
 
-.forwho__column {
+.forwho__row-bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.item-forwho {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 33.333%;
           flex: 0 1 33.333%;
   padding: 0px 0px 0px 21px;
+  margin: 0px -13px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-.forwho__item {
+.item-forwho__body {
+  padding: 0px 0px 0px 70px;
+}
+
+.item-forwho__content {
   background: #f2eef7;
   border: 3px solid #4c3d74;
   border-radius: 30px;
@@ -515,10 +529,23 @@ body._lock {
       -ms-flex-align: center;
           align-items: center;
   padding: 30px 30px 30px 57px;
+  position: relative;
+  color: #4c3d74;
 }
 
-.forwho__text {
-  font-weight: 500;
+.item-forwho__image {
+  position: absolute;
+  width: 89px;
+  height: 89px;
+  top: 12px;
+  left: -44.5px;
+}
+
+.item-forwho__text {
   font-size: 16px;
   line-height: 150%;
+}
+
+.item-forwho__text span {
+  font-weight: 700;
 }

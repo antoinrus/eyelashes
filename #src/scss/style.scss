@@ -84,7 +84,7 @@ body {
 }
 .title {
 	font-weight: 700;
-	font-size: 50px;
+	@include adaptiv-font(50, 30);
 	line-height: 132%;
 	color: #504178;
 	text-align: center;
@@ -346,9 +346,9 @@ body {
 //========================================================================================================================================================
 
 .forwho {
+	padding: 167px 0px 182px 0px;
 	// .forwho__container
 	&__container {
-		padding: 167px 0 182px 0;
 	}
 	// .forwho__title
 	&__title {
@@ -357,7 +357,11 @@ body {
 	// .forwho__row-top
 	&__row-top {
 		display: flex;
-		margin: 0px 0px 43px 0px;
+		margin: 0px -13px 43px -13px;
+		justify-content: space-between;
+		@media (max-width: $md2+px) {
+			flex-wrap: wrap;
+		}
 	}
 	// .forwho__item
 	&__item {
@@ -377,21 +381,24 @@ body {
 
 .item-forwho {
 	flex: 0 1 33.333%;
-	padding: 0px 0px 0px 21px;
-	margin: 0px -13px;
-	justify-content: space-between;
-	// .item-forwho__body
-	&__body {
-		padding: 0px 0px 0px 70px;
+	padding: 0px 0px 0px 38px;
+	display: flex;
+	margin: 0px 13px;
+	&:first-child {
+		margin: 0px 13px 0px 0px;
+		@media (max-width: $md2+px) {
+			margin: 0;
+		}
+	}
+	@media (max-width: $md2+px) {
+		flex: 1 0 100%;
+		margin: 0;
 	}
 	// .item-forwho__content
 	&__content {
 		background: #f2eef7;
 		border: 3px solid $mainColor;
 		border-radius: 30px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
 		padding: 30px 30px 30px 57px;
 		position: relative;
 		color: $mainColor;
@@ -403,6 +410,10 @@ body {
 		height: 89px;
 		top: 12px;
 		left: -44.5px;
+		img {
+			max-width: 100%;
+			object-position: bottom;
+		}
 	}
 	// .item-forwho__text
 	&__text {

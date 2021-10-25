@@ -157,7 +157,7 @@ body._lock {
 
 .title {
   font-weight: 700;
-  font-size: 50px;
+  font-size: calc(30px + 20 * ((100vw - 414px) / 1026));
   line-height: 132%;
   color: #504178;
   text-align: center;
@@ -479,8 +479,8 @@ body._lock {
   max-width: 100%;
 }
 
-.forwho__container {
-  padding: 167px 0 182px 0;
+.forwho {
+  padding: 167px 0px 182px 0px;
 }
 
 .forwho__title {
@@ -491,7 +491,17 @@ body._lock {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 0px 0px 43px 0px;
+  margin: 0px -13px 43px -13px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media (max-width: 991.98px) {
+  .forwho__row-top {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
 }
 
 .forwho__row-bottom {
@@ -504,30 +514,36 @@ body._lock {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 33.333%;
           flex: 0 1 33.333%;
-  padding: 0px 0px 0px 21px;
-  margin: 0px -13px;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  padding: 0px 0px 0px 38px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0px 13px;
 }
 
-.item-forwho__body {
-  padding: 0px 0px 0px 70px;
+.item-forwho:first-child {
+  margin: 0px 13px 0px 0px;
+}
+
+@media (max-width: 991.98px) {
+  .item-forwho:first-child {
+    margin: 0;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .item-forwho {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 100%;
+            flex: 1 0 100%;
+    margin: 0;
+  }
 }
 
 .item-forwho__content {
   background: #f2eef7;
   border: 3px solid #4c3d74;
   border-radius: 30px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   padding: 30px 30px 30px 57px;
   position: relative;
   color: #4c3d74;
@@ -539,6 +555,12 @@ body._lock {
   height: 89px;
   top: 12px;
   left: -44.5px;
+}
+
+.item-forwho__image img {
+  max-width: 100%;
+  -o-object-position: bottom;
+     object-position: bottom;
 }
 
 .item-forwho__text {

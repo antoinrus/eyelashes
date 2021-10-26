@@ -60,11 +60,13 @@ body {
 	padding: 0px 57px;
 	box-sizing: content-box;
 }
-.btn {
+._btn {
 	display: inline-flex;
 	min-width: 245px;
 	min-height: 60px;
 	border-radius: 30px;
+	font-weight: 700;
+	font-size: 16px;
 	line-height: 131%;
 	color: #fff;
 	justify-content: center;
@@ -263,6 +265,7 @@ body {
 	padding-bottom: 20vh;
 	@media (max-width: $md2+px) {
 		padding-top: 20.475vh;
+		padding-bottom: 10vh;
 	}
 
 	// .main-block__container
@@ -270,7 +273,7 @@ body {
 		display: flex;
 		align-items: center;
 
-		@media (max-width: $md2+px) {
+		@media (max-width: $md3+px) {
 			flex-wrap: wrap;
 			text-align: center;
 		}
@@ -281,7 +284,7 @@ body {
 		color: #ffffff;
 		font-weight: 700;
 		margin: 0px 20px 0px 0px;
-		@media (max-width: $md2+px) {
+		@media (max-width: $md3+px) {
 			margin: 0;
 		}
 	}
@@ -307,7 +310,7 @@ body {
 		&:not(:last-child) {
 			margin: 0px 0px 3.6vh 0px;
 		}
-		@media (max-width: $md2+px) {
+		@media (max-width: $md3+px) {
 			&:not(:last-child) {
 				margin: 0px -29px 3.6vh -29px;
 			}
@@ -318,7 +321,7 @@ body {
 		display: flex;
 		flex-wrap: wrap;
 		margin: -10px -12px;
-		@media (max-width: $md2+px) {
+		@media (max-width: $md3+px) {
 			justify-content: center;
 		}
 	}
@@ -334,8 +337,15 @@ body {
 		flex: 0 0 472px;
 		margin: -10vh -68px 0px 0px;
 		@media (max-width: $md2+px) {
+			flex: 0 0 400px;
+		}
+
+		@media (max-width: $md3+px) {
+			flex: 0 0 300px;
+			margin: 0 auto;
+		}
+		@media (max-width: $md4+px) {
 			flex: 1 1 auto;
-			margin: 0;
 		}
 
 		img {
@@ -347,6 +357,9 @@ body {
 
 .forwho {
 	padding: 167px 0px 182px 0px;
+	@media (max-width: $md2+px) {
+		padding: 110px 0px;
+	}
 	// .forwho__container
 	&__container {
 	}
@@ -361,6 +374,7 @@ body {
 		justify-content: space-between;
 		@media (max-width: $md2+px) {
 			flex-wrap: wrap;
+			margin: 0px 0px 43px -13px;
 		}
 	}
 	// .forwho__item
@@ -373,9 +387,15 @@ body {
 	}
 	// .forwho__subtitle
 	&__subtitle {
+		color: $mainColor;
+		flex: 0 1 510px;
+		margin: 0px 30px 0px 0px;
+		font-weight: 700;
+		font-size: 20px;
+		line-height: 150%;
 	}
-	// .forwho__btn
-	&__btn {
+	// .forwho__button
+	&__button {
 	}
 }
 
@@ -384,15 +404,16 @@ body {
 	padding: 0px 0px 0px 38px;
 	display: flex;
 	margin: 0px 13px;
+	min-height: 105px;
 	&:first-child {
 		margin: 0px 13px 0px 0px;
 		@media (max-width: $md2+px) {
-			margin: 0;
+			margin: 20px 0;
 		}
 	}
 	@media (max-width: $md2+px) {
 		flex: 1 0 100%;
-		margin: 0;
+		margin: 20px 0;
 	}
 	// .item-forwho__content
 	&__content {
@@ -402,6 +423,7 @@ body {
 		padding: 30px 30px 30px 57px;
 		position: relative;
 		color: $mainColor;
+		flex: 1 0 100%;
 	}
 	// .item-forwho__image
 	&__image {

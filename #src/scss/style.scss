@@ -415,6 +415,12 @@ body {
 		flex: 1 0 100%;
 		margin: 20px 0;
 	}
+	@media (max-width: $md3+px) {
+		padding: 0;
+		&:nth-child(2n) &__content &__image {
+			right: -12px;
+		}
+	}
 	// .item-forwho__content
 	&__content {
 		background: #f2eef7;
@@ -432,6 +438,12 @@ body {
 		height: 89px;
 		top: 12px;
 		left: -44.5px;
+		@media (max-width: $md3+px) {
+			width: 61px;
+			height: 61px;
+			top: -40px;
+			right: -12px;
+		}
 		img {
 			max-width: 100%;
 			object-position: bottom;

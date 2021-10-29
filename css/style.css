@@ -578,6 +578,15 @@ body._lock {
   }
 }
 
+@media (max-width: 767.98px) {
+  .item-forwho {
+    padding: 0;
+  }
+  .item-forwho:nth-child(2n) .item-forwho__content .item-forwho__image {
+    right: -12px;
+  }
+}
+
 .item-forwho__content {
   background: #f2eef7;
   border: 3px solid #4c3d74;
@@ -596,6 +605,15 @@ body._lock {
   height: 89px;
   top: 12px;
   left: -44.5px;
+}
+
+@media (max-width: 767.98px) {
+  .item-forwho__image {
+    width: 61px;
+    height: 61px;
+    top: -40px;
+    right: -12px;
+  }
 }
 
 .item-forwho__image img {

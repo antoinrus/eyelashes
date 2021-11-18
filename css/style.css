@@ -186,6 +186,40 @@ body._lock {
   color: #fff;
 }
 
+.spollers__item {
+  color: #4c3d74;
+  min-height: 64px;
+  border-top: 3px solid #4c3d74;
+  padding: 18px 0px;
+}
+
+.spollers__item:last-child {
+  border-bottom: 3px solid #4c3d74;
+}
+
+.spollers__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #4c3d74;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 150%;
+  background-color: transparent;
+}
+
+.spollers__title._active {
+  margin: 0px 0px 20px 0px;
+}
+
+.spollers__list li {
+  list-style: decimal;
+  margin: 0px 0px 0px 15px;
+}
+
 .wrapper {
   overflow: hidden;
   min-height: 100vh;
@@ -999,4 +1033,8 @@ body._lock {
   font-size: calc(30px + 20 * ((100vw - 414px) / 1026));
   line-height: 132%;
   margin: 0px 0px 7px 0px;
+}
+
+.programm {
+  padding: 168px 0px 182px 0px;
 }

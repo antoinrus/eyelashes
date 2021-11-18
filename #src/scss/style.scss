@@ -105,6 +105,36 @@ body {
 		color: #fff;
 	}
 }
+.spollers {
+	// .spollers__item
+	&__item {
+		color: $mainColor;
+		min-height: 64px;
+		border-top: 3px solid $mainColor;
+		padding: 18px 0px;
+		&:last-child {
+			border-bottom: 3px solid $mainColor;
+		}
+	}
+	// .spollers__title
+	&__title {
+		display: flex;
+		align-items: center;
+		color: $mainColor;
+		font-weight: 500;
+		font-size: 18px;
+		line-height: 150%;
+		background-color: transparent;
+		&._active {
+			margin: 0px 0px 20px 0px;
+		}
+	}
+	// .spollers__list
+	&__list li {
+		list-style: decimal;
+		margin: 0px 0px 0px 15px;
+	}
+}
 //</ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
 
 .wrapper {
@@ -266,6 +296,9 @@ body {
 	}
 	// .page__about
 	&__about {
+	}
+	// .page__programm
+	&__programm {
 	}
 }
 //========================================================================================================================================================
@@ -713,5 +746,19 @@ body {
 	}
 	// .numbers-about__text
 	&__text {
+	}
+}
+//========================================================================================================================================================
+
+.programm {
+	padding: 168px 0px 182px 0px;
+	// .programm__container
+	&__container {
+	}
+	// .programm__title
+	&__title {
+	}
+	// .programm__spollers
+	&__spollers {
 	}
 }

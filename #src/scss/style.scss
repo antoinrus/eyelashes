@@ -112,21 +112,57 @@ body {
 		min-height: 64px;
 		border-top: 3px solid $mainColor;
 		padding: 18px 0px;
+		position: relative;
 		&:last-child {
 			border-bottom: 3px solid $mainColor;
 		}
 	}
 	// .spollers__title
 	&__title {
+		width: 100%;
 		display: flex;
 		align-items: center;
+		padding: 0px 40px 0px 0px;
 		color: $mainColor;
 		font-weight: 500;
 		font-size: 18px;
 		line-height: 150%;
 		background-color: transparent;
+		text-align: left;
+		transition: color 0.3s ease 0s;
 		&._active {
 			margin: 0px 0px 20px 0px;
+		}
+		&:hover {
+			color: rgb(59, 7, 42);
+		}
+		&::after,
+		&::before {
+			content: "";
+			position: absolute;
+			background-color: $mainColor;
+			transition: all 0.3s ease 0s;
+			&:hover {
+				color: rgb(59, 7, 42);
+			}
+		}
+		&::after {
+			right: 8px;
+			top: 27px;
+			width: 12px;
+			height: 2px;
+		}
+		&::before {
+			right: 13px;
+			top: 22px;
+			width: 2px;
+			height: 12px;
+		}
+		&._active {
+			&::after,
+			&::before {
+				transform: rotate(45deg);
+			}
 		}
 	}
 	// .spollers__list
@@ -300,7 +336,11 @@ body {
 	// .page__programm
 	&__programm {
 	}
+	// .page__tariffs
+	&__tariffs {
+	}
 }
+
 //========================================================================================================================================================
 
 .main-block {
@@ -445,6 +485,7 @@ body {
 	// .forwho__row-bottom
 	&__row-bottom {
 		display: flex;
+		align-items: flex-start;
 		@media (max-width: $md1+px) {
 			display: block;
 		}
@@ -458,6 +499,7 @@ body {
 		flex: 0 1 450px;
 		max-width: 450px;
 		margin: 0px 30px 0px 0px;
+		padding: 3px 0px 0px 0px;
 		font-weight: 700;
 		font-size: 20px;
 		line-height: 150%;
@@ -751,14 +793,149 @@ body {
 //========================================================================================================================================================
 
 .programm {
-	padding: 168px 0px 182px 0px;
+	padding: 168px 0px 0px 0px;
+	@media (max-width: $md2+px) {
+		padding: 120px 0px 0px 0px;
+	}
 	// .programm__container
 	&__container {
+		position: relative;
+		padding-bottom: 182px;
+		@media (max-width: $md2+px) {
+			padding-bottom: 100px;
+		}
+		@media (max-width: $md3+px) {
+			padding-bottom: 250px;
+		}
 	}
 	// .programm__title
 	&__title {
+		margin: 0px 0px 46px 0px;
 	}
 	// .programm__spollers
 	&__spollers {
+		margin: 0px 0px 50px 0px;
+	}
+	// .programm__bottom
+	&__bottom {
+		display: flex;
+		align-items: flex-start;
+		@media (max-width: $md2+px) {
+			display: block;
+			& > *:not(:last-child) {
+				margin: 0px 0px 20px 0px;
+			}
+		}
+		@media (max-width: $md3+px) {
+			text-align: center;
+		}
+	}
+	// .programm__subtitle
+	&__subtitle {
+		padding: 5px 0px 0px 0px;
+		max-width: 500px;
+		color: $mainColor;
+		font-size: 20px;
+		@media (max-width: $md3+px) {
+			max-width: 100%;
+		}
+	}
+	// .programm__button
+	&__button {
+		margin: 0px 40px 0px 0px;
+	}
+	// .programm__image
+	&__image {
+	}
+}
+.image-programm {
+	// .image-programm__body
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	&__body {
+		position: absolute;
+		bottom: 0;
+		right: 125px;
+		width: 243px;
+		height: 243px;
+		img {
+			max-width: 100%;
+		}
+		@media (max-width: $md2+px) {
+			right: 75px;
+		}
+		@media (max-width: $md3+px) {
+			width: 215px;
+			height: 215px;
+			right: 50%;
+			transform: translateX(50%);
+		}
+	}
+}
+//========================================================================================================================================================
+
+.tariffs {
+	background-color: $mainColor;
+	color: #fff;
+	// .tariffs__container
+	&__container {
+	}
+	// .tariffs__title
+	&__title {
+		color: inherit;
+	}
+	// .tariffs__row
+	&__row {
+	}
+	// .tariffs__column
+	&__column {
+	}
+	// .tariffs__tariff
+	&__tariff {
+	}
+	// .tariffs__bottom
+	&__bottom {
+	}
+	// .tariffs__text
+	&__text {
+	}
+	// .tariffs__btn
+	&__btn {
+	}
+	// .tariffs__instagram
+	&__instagram {
+	}
+}
+.tariff {
+	// .tariff__title
+	&__title {
+	}
+	// .tariff__list
+	&__list {
+	}
+	// .tariff__item
+	&__item {
+		// .tariff__item_plus
+		&_plus {
+		}
+		// .tariff__item_minus
+		&_minus {
+		}
+	}
+	// .tariff__prices
+	&__prices {
+	}
+	// .tariff__price
+	&__price {
+		// .tariff__price_old
+		&_old {
+		}
+	}
+	// .tariff__btn
+	&__btn {
 	}
 }

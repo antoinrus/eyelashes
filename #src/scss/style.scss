@@ -881,24 +881,32 @@ body {
 .tariffs {
 	background-color: $mainColor;
 	color: #fff;
+	padding: 168px 0px 177px 0px;
 	// .tariffs__container
 	&__container {
 	}
 	// .tariffs__title
 	&__title {
 		color: inherit;
+		margin: 0px 0px 46px 0px;
 	}
 	// .tariffs__row
 	&__row {
+		display: flex;
+		margin: 0px -18px 93px -18px;
 	}
 	// .tariffs__column
 	&__column {
+		flex: 0 1 33.333%;
+		padding: 0px 18px;
 	}
 	// .tariffs__tariff
 	&__tariff {
 	}
 	// .tariffs__bottom
 	&__bottom {
+		display: flex;
+		justify-content: space-between;
 	}
 	// .tariffs__text
 	&__text {
@@ -911,31 +919,71 @@ body {
 	}
 }
 .tariff {
+	background: #f2eef7;
+	border-radius: 30px;
+	color: $mainColor;
+	padding: 57px 35px;
+	position: relative;
+	// .tariff__image
+	&__image {
+		display: none;
+	}
 	// .tariff__title
 	&__title {
+		font-weight: 700;
+		margin: 0px 0px 15px 0px;
 	}
 	// .tariff__list
 	&__list {
+		margin: 0px 0px 18px 0px;
 	}
-	// .tariff__item
-	&__item {
-		// .tariff__item_plus
-		&_plus {
+	// .tariff__list-item
+	&__list-item {
+		margin: 0px 0px 8px 0px;
+		padding: 0px 0px 0px 25px;
+		position: relative;
+		span {
+			font-weight: 700;
 		}
-		// .tariff__item_minus
+		&::before {
+			content: "+";
+			left: 0;
+			top: 0px;
+		}
+		// .tariff__list-item_minus
 		&_minus {
+			text-decoration: line-through;
+			&::before {
+				content: "-";
+				left: 3px;
+				top: -2px;
+			}
+		}
+		&::before,
+		&_minus::before {
+			font-weight: 700;
+			font-size: 25px;
+			position: absolute;
 		}
 	}
 	// .tariff__prices
 	&__prices {
+		display: flex;
+		justify-content: space-between;
 	}
 	// .tariff__price
 	&__price {
+		font-weight: 700;
 		// .tariff__price_old
 		&_old {
+			text-decoration: line-through;
 		}
 	}
 	// .tariff__btn
 	&__btn {
+		position: absolute;
+		bottom: -30px;
+		left: 50%;
+		transform: translate(-50%, 0);
 	}
 }

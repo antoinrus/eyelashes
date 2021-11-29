@@ -1208,7 +1208,12 @@ body._lock {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 0px -18px 93px -18px;
+  margin: -34px -18px 59px -18px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .tariffs__column {
@@ -1216,6 +1221,23 @@ body._lock {
       -ms-flex: 0 1 33.333%;
           flex: 0 1 33.333%;
   padding: 0px 18px;
+  margin: 34px 0px;
+}
+
+@media (max-width: 1172px) {
+  .tariffs__column {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 50%;
+            flex: 0 1 50%;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .tariffs__column {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 100%;
+            flex: 1 1 100%;
+  }
 }
 
 .tariffs__bottom {
@@ -1225,6 +1247,54 @@ body._lock {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 991.98px) {
+  .tariffs__bottom {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+  }
+}
+
+.tariffs__gift-image {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 67px;
+          flex: 0 0 67px;
+  height: 67px;
+  margin: 0px 30px 0px 0px;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
+@media (max-width: 991.98px) {
+  .tariffs__gift-image {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+}
+
+.tariffs__gift-image img {
+  width: 100%;
+}
+
+.tariffs__text {
+  padding: 0px 40px 0px 0px;
+  font-weight: 700;
+}
+
+.tariffs__btn {
+  margin: 0px 44px 0px 0px;
+}
+
+.tariffs__instagram {
+  font-weight: 700;
 }
 
 .tariff {
@@ -1236,7 +1306,23 @@ body._lock {
 }
 
 .tariff__image {
-  display: none;
+  position: absolute;
+  top: -45px;
+  right: -60px;
+  width: 147px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.tariff__image img {
+  max-width: 147px;
 }
 
 .tariff__title {
